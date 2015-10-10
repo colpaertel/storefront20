@@ -22,7 +22,15 @@ angular.module('ds.products')
          * GlobalData service.
          * */
         var getProducts = function (parms) {
-            return PriceProductREST.Products.all('products').getList(parms);
+            console.log('entered');
+            var products =  PriceProductREST.Products.all('products').getList(parms);
+            var newProducts=[];
+            products.forEach(function(entry) {
+                entry.summer=true;
+                console.log(entry);
+                newProducts.add(entry);
+            });
+            return products;
         };
 
         var getProductDetailsList = function (parms) {
@@ -36,6 +44,7 @@ angular.module('ds.products')
              * @return The result array as returned by Angular $resource.query().
              */
             query: function(parms) {
+                console.log('enter');
                return getProducts(parms);
             },
 

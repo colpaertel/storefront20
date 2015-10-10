@@ -94,6 +94,9 @@ angular.module('ds.shared')
 
                 indexing: {
                     baseUrl: 'https://' + apiPath + '/hybris/search-algolia/b1/' + tenantId
+                },
+                temperatureProducts: {
+                    baseUrl: 'https://api.yaas.io/chfteam20/temperature/v1/'
                 }
             };
 
